@@ -5,6 +5,7 @@ Puntos:
 - Validar si una propiedad esta definida para mostrarla.
 - Directiva `@keyup.[enter]`.
 - Usar archivos dentro de `assets/`
+- Como `v2` usa el `this`, `data` y `methods`.
 
 ### Como usar environments variables con V2 y V3
 [How To Use Environment Variables in Vue.js](https://www.digitalocean.com/community/tutorials/vuejs-working-with-environment-variables)
