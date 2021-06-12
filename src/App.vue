@@ -35,30 +35,23 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import env from "@/env.js";
 
 export default {
-  name: "App",
-  data() {
-    return {
-      api_key: env.apiKey,
-      url_base: env.apiUrl,
-      query: "",
-      weather: {},
-    };
-  },
-  methods: {
-    fetchWeather() {
-      fetch(
-        `${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`
-      )
+  setup() {
+    const api_key = env.apiKey;
+    const url_base = env.apiUrl;
+    const search = "";
+    const weather = ref;
+
+    const fetchWeather = () => {
+      fetch(`${url_base}weather?q=${search}&units=metric&APPID=${api_key}`)
         .then((res) => res.json())
-        .then(this.setResults);
-    },
-    setResults(results) {
-      this.weather = results;
-    },
-    dateBuilder() {
+        .then((data) => weather.value === data);
+    };
+
+    const dateBuilder = () => {
       let d = new Date();
       let months = [
         "January",
@@ -88,7 +81,13 @@ export default {
       let month = months[d.getMonth()];
       let year = d.getFullYear();
       return `${day} ${date} ${month} ${year}`;
-    },
+    };
+
+    return {
+      fetchWeather,
+      dateBuilder,
+      search,
+    };
   },
 };
 </script>
