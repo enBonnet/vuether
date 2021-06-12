@@ -1,5 +1,13 @@
 # vuether
 
+Puntos:
+- @ es equivalente a la directiva "v-on".
+- Validar si una propiedad esta definida para mostrarla.
+- Directiva `@keyup.[enter]`.
+- Usar archivos dentro de `assets/`
+
+### Build a Weather App in VueJS | Vue Beginner Tutorial
+[![Build a Weather App in VueJS | Vue Beginner Tutorial](https://img.youtube.com/vi/JLc-hWsPTUY/0.jpg)](https://www.youtube.com/watch?v=JLc-hWsPTUY)
 ## Project setup
 ```
 npm install
